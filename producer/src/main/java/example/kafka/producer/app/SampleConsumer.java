@@ -51,7 +51,7 @@ public class SampleConsumer {
                     message = record.value();
                     System.out.println(message);
                 }
-            } while (!message.equals("exit"));
+            } while (!message.startsWith("exit"));
         } catch(Exception e) {
             // exception
         } finally {
