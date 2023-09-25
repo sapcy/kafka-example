@@ -17,7 +17,7 @@ public class SampleProducer {
     private final static Logger logger = LoggerFactory.getLogger(SampleProducer.class);
 
     private final static String BOOTSTRAP_SERVER = "localhost:9092";
-    private final static String TOPIC = "sample_topic";
+    private final static String TOPIC = "sample-topic";
 
     private final static Properties configs = new Properties();
 
