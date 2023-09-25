@@ -37,7 +37,7 @@ public class SampleProducer {
         configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
     }
 
-    public void send(String message) {
+    public void send(String key, String message) {
         /**
          * 프로듀서 인스턴스를 생성하며, 위에서 설정한 설정을 파라미터로 사용한다.
          */
@@ -55,7 +55,7 @@ public class SampleProducer {
          * 레코드를 생성하고 전달한다.
          * 이때, 레코드를 전달할 토픽과 레코드의 메시지 값을 지정한다.
          */
-        ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC, messageValue);
+        ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC, key, messageValue);
         producer.send(record);
 
         logger.info("{}", record);

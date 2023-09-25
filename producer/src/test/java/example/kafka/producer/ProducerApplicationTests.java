@@ -10,16 +10,16 @@ class ProducerApplicationTests {
     private static final SampleProducer sampleProducer = new SampleProducer();
     @Test
     void send() {
-        sampleProducer.send("hello, I'm kafka sample producer!!");
-    }
-
-    @Test
-    void send2() {
-        sampleProducer.send("sample producer is simple ^O^");
+        sampleProducer.send("key1", "hello, I'm kafka sample producer!!");
+        sampleProducer.send("key2", "hello, I'm kafka sample producer!!");
+        sampleProducer.send("key2", "hello, I'm kafka sample producer!!");
+        sampleProducer.send("key3", "hello, I'm kafka sample producer!!");
+        sampleProducer.send("key3", "hello, I'm kafka sample producer!!");
+        sampleProducer.send("key3", "hello, I'm kafka sample producer!!");
     }
 
     @Test
     void exitConsumer() {
-        sampleProducer.send("exit");
+        sampleProducer.send("key1", "exit");
     }
 }
